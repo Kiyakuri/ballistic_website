@@ -1,0 +1,57 @@
+/* CSS Document */
+
+#flyingAirplane {
+	margin-top: 50vh;
+}
+@mixin flyingAirplane_tab-vert {
+	#flyingAirplane {
+		margin-top: 90vh;
+	}
+}
+@mixin flyingAirplane_tab-hor {
+	#flyingAirplane {
+		margin-top: 105vh;
+	}
+}
+
+.whoPargraph {
+	font-family: $inconsolata;
+	text-align: left;
+	line-height: 120%;
+}
+@mixin whoParagraph_tab-vert {
+	.whoParagraphWidth {
+		width: 80vw;
+		margin-left: 10vw;
+	}
+}
+@mixin whoParagraph_tab-hor {
+	.whoParagraphWidth {
+		width: 70vw;
+		margin-left: 15vw;
+	}
+}
+@mixin whoParagraph_desktop {
+	.whoParagraphWidth {
+		width: 60vw;
+		margin-left: 20vw;
+	}
+}
+.teamGroupImage {
+	width: 90vw;
+	margin: 5vh 5vw;
+	background-color: $ballistic_red;
+	height: 35vh;
+	background-image:url(https://ballistic.agency/images/ba-headshots-253-large.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.spaceMaker {
+	margin-bottom: 10vh;
+}
+
+.center {
+	text-align: center;
+}

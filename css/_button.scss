@@ -1,0 +1,92 @@
+/* CSS Document */
+
+*,
+*:after,
+*:before { box-sizing: border-box; }
+
+
+
+//- COMPONENT
+$duration: 500ms;
+$button-height: 40px;
+$button-width: 500px;
+
+%Button__element {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+%Button__transitionable {
+  transition: top $duration;
+}
+
+.Button {
+  margin: 30px auto 0 auto;
+  display: inline-block;
+  position: relative;
+  background-color: $ballistic-red;
+  color: $ballistic-gray;
+  font-size: 1.5rem;
+  letter-spacing: .1em;
+  border-radius: 4px;
+  width: 85%;
+  max-width: $button-width;
+  height: $button-height;
+  box-shadow: 0 2px 20px rgba(#000, 0.7), inset 0 1px rgba(#fff, 0.3);
+  text-align: center;
+  transition: background-color $duration, transform 100ms;
+  
+  &__textWrapper {
+    @extend %Button__element;
+    overflow: hidden;
+  }
+  
+  &__text {
+    @extend %Button__element;
+    @extend %Button__transitionable;
+    line-height: $button-height;
+    top: 100%;
+  }
+  
+  &__icon {
+    @extend %Button__element;
+    @extend %Button__transitionable;
+    top: 0;
+    background: url(https://ballistic.agency/images/icons/email_icon_ballistic-01.svg) no-repeat center center;
+  }
+	&__icontwo {
+	@extend %Button__element;
+    @extend %Button__transitionable;
+    top: 0;
+    background: url(https://ballistic.agency/images/icons/location_icon_ballistic-01.svg) no-repeat center center;
+	}
+  // button hover
+  &:hover {
+    background-color: #AB224B;
+    .Button__text { top: 0; }
+    .Button__icon { top: -100%; }
+	.Button__icontwo { top: -100%; } 
+  }
+  
+  &:active { transform: translate(2px, 2px); }
+}
+
+@mixin Button_tab-vert {
+	.Button {
+	//	margin-left: 16%;
+		height: 50px;
+		width: 500px;
+	}
+}
+@mixin Button_tab-hor {
+	.Button {
+	// margin-left: 25%;
+	height: 60px;
+	font-size: 2rem;
+		&__text {
+			line-height: 60px
+		}
+	}
+}

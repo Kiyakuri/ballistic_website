@@ -1,0 +1,165 @@
+/* CSS Document */
+
+//index.html 
+
+#graphic_design {
+	margin-left: 35vw;
+	padding-top: 25vh;
+	//overflow: hidden;
+}
+.graphic_design {
+	background-image:url(https://ballistic.agency/images/computer_image.svg);
+	background-repeat:no-repeat;
+	background-position: 30% 0%;
+	background-size: 70%;
+}
+@mixin graphic_design_mobile-msv {
+	.graphic_design {
+	background-size: 50%;
+	}
+}
+#coding {
+	margin-left: 5vw;
+	padding-top: 15vh;
+}
+.coding {
+	background-image:url(https://ballistic.agency/images/code_image-01.svg);
+	background-repeat:no-repeat;
+	background-size: 75%;
+	background-position: 70% 0%;
+}
+@mixin coding_mobile-msv {
+	.coding {
+		background-size: 60%;
+	}
+}
+#content {
+	margin-left: 30vw;
+	padding-top: 22vh;
+}
+.content {
+	background-image:url(https://ballistic.agency/images/content_image-01.svg);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: 20% 0%;
+}
+@mixin content_mobile-msv {
+	.content {
+		background-size: 35%;
+	}
+}
+#marketing {
+	margin-left: 5vw;
+	padding-top: 27vh;
+}
+.marketing {
+	background-image:url(https://ballistic.agency/images/marketing_image-01.svg);
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 90% 0%;
+	margin-bottom: 15vh;
+}
+@mixin marketing_mobile-msv {
+	.marketing {
+		background-size: 40%;
+		background-position: 80% 0%;
+	}
+}
+
+//Non-Mobile Paragraph Changes Using IDs
+
+@mixin what_pargraphs_tab-hor {
+	
+	#intro_paragraph {
+		width: 60vw;
+		margin-left: 22.5vw;
+		margin-top: 5px;
+	}
+	#design_copy, #content_copy {
+		margin-left: 30vw;
+		width: 60vw;
+	}
+	
+	#graphic_design, #content {
+		margin-left: 30vw;
+	}
+	.graphic_design {
+		background-size: 30%;
+		background-position: 15% 40%;
+	}
+	.content {
+		background-size: 25%;
+		background-position: 15% 40%;
+	}
+	#coding_copy, #marketing_copy {
+		width: 60vw;
+		margin-left: 15vw;
+	}
+	#coding, #marketing {
+		margin-left: 15vw;
+	}
+	.coding {
+		background-size: 32%;
+		background-position: 90% 40%;
+	}
+	.marketing {
+		background-size: 26%;
+		background-position: 95% 70%;
+	}
+	#marketing {
+		margin-top: -10vh;
+	}
+}
+@mixin what_parapgraphs_laptop {
+	.graphic_design {
+		background-size: 20%;
+	}
+	.coding {
+		background-size: 25%;
+	}
+	.content {
+		background-size: 17%;
+	}
+	.marketing {
+		background-size: 17%;
+		background-position: 90% 70%;
+	}
+}
+@mixin what_paragraphs_dsk-lrg {
+	.intro_section {
+		margin-top: 80vh;
+	}
+	.text_section {
+		margin-top: 10vh;
+	}
+	#intro_paragraph {
+		width: 30vw;
+	    margin-left: 34.5vw;
+	}
+	#coding_copy, #marketing_copy, #design_copy, #content_copy {
+		width: 35vw;
+	}
+	#coding_copy, #marketing_copy, #coding, #marketing {
+		margin-left: 22.5vw;
+	}
+	#design_copy, #content_copy, #graphic_design, #content {
+		margin-left: 45vw;
+	}
+	.graphic_design {
+		background-size: 18%;
+		background-position: 40% 43%;
+	}
+	.coding {
+		background-size: 23%;
+		background-position: 70% 40%;
+	}
+	.content {
+		background-size: 15%;
+		background-position: 35% 80%;
+	}
+	.marketing {
+		background-size: 15%;
+		background-position: 65% 70%;
+	}
+} 
+

@@ -1,0 +1,215 @@
+@charset "utf-8";
+// Variables
+
+//Branding Colors
+$ballistic_red: #F8224A;
+$ballistic_gray: #DFE0E1;
+$ballistic_cyan: #24FBFC;
+// OG FOR ORIGINAL BACKGROUND  $ballistic_black: #111820;
+$ballistic_black: #050812;
+
+//Shortcode for Typefaces
+$bodoni: "Bodoni STD", bodoni-urw, serif;
+$inconsolata: 'Inconsolata', monospace;
+$headline: HeadlineA, "freight-sans-condensed-pro", cursive;
+
+//Css Reset
+@import "_reset-src.scss";
+//Button Animation
+@import '_button.scss';
+//Menu
+@import '_menu.scss';
+
+//Global Properties
+
+html { font-size: 16px; }
+
+body {
+  font-size: 100%;
+  font-family: $headline;
+  background-color: $ballistic_black;
+  background-image: url("https://ballistic.agency/images/shattered-island.png");
+  background-repeat: repeat;
+}
+
+a { text-decoration: none;
+	color: $ballistic_cyan;
+}
+p a:visited {
+	color: $ballistic_red;
+}
+#lines {
+	width: 100vw;
+	height: 2px;
+}
+#red_line, #cyan_line {
+	height: 100%;
+}
+#red_line {
+	width: 66.66vw;
+	float:left;
+	background-color: $ballistic_red;
+}
+#cyan_line {
+	width: 33.33vw;
+	float:right;
+	background-color: $ballistic_cyan;
+}
+.logo {
+	position:absolute;
+	left: 20px;
+	top: 20px;
+	width: 175px;
+}
+@mixin logo_global {
+	.logo {
+		top: 55%;
+		left: 50px;
+		width: 350px;
+	}
+}
+@mixin logo_dsk-lrg {
+		.logo {
+			left: 10vw;
+		}
+	}
+//Im not entirely sure if these go on what.scss, or if they apply to how and what, so I left them in global.
+
+.hero {
+	position:absolute;
+	top: 50px;
+	left: 50%;
+	overflow: hidden;
+}
+@mixin hero_dsk-lrg {
+	.hero {
+		width: 500px;
+		left: 60%;
+	}
+}
+
+.what {
+	color: $ballistic_cyan;
+}
+.how {
+	color: $ballistic_red;
+}
+.who {
+	color: $ballistic_gray;
+}
+
+.padded {
+	padding: 10px 25px;
+}
+@mixin padded_tab-hor {
+	.padded {
+		padding: 10px 0px;
+	}
+}
+h3 {
+	padding-bottom: 2vh;
+}
+
+.intro_section, .text_section, .intro_section_how {
+	color: $ballistic_gray;
+	font-family: $inconsolata;
+	line-height: 120%;
+}
+.intro_section, .intro_section_how {
+	text-align: center;
+}
+@mixin intro_section_mobile-msv {
+	.intro_section {
+		margin-top: 15vh;
+	}
+}
+@mixin intro_section_global {
+	.intro_section {
+		margin-top: 55vh;
+	}
+}
+@mixin intro_section_tab-vert {
+	.intro_section_how {
+		margin-top: 55vh;
+	}
+}
+@mixin intro_section_laptop {
+	.intro_section {
+		margin-top: 100vh;
+	}
+	.intro_section_how {
+		margin-top: 70vh;
+	}
+}
+.text_section {
+	margin-top: 5vh;
+	overflow: hidden;
+	// leaves room for image to be above text
+}
+
+@mixin headers {
+	text-transform: uppercase;
+	font-family: $headline;
+}
+h3 {
+	@include headers;
+	font-size: 2.5em;
+	text-align: center;	
+}
+
+// Needed for What/Index Page, but not Who
+.marginTopForHeader {
+	margin-top: 350px;
+}
+@mixin marginTopForHeader-global {
+	.intro_section_how {
+		margin-top: 55vh;
+	}
+}
+
+h2 {
+	@include headers;
+	font-size: 4.5em;
+	line-height: 78%;
+}
+
+.center_left {
+	// Make left-aligned paragraphs more centered on mobile
+	 margin-left: 15px;
+}
+@mixin center_left-tab-hor {
+	.center-left {
+		margin-left: 0px;
+	}
+}
+// Ze Footer
+#footer ul {
+	display:flex;
+	text-decoration:none;
+	margin-bottom: 2vh;
+	& li {
+		color: $ballistic_gray;
+		font-family: $inconsolata;
+		margin-left: 20px;
+		font-size: 11px;
+	}
+}
+@mixin footer-mobile {
+	#footer ul {
+		margin-bottom: 10vh;
+	}
+}
+.confirmed {
+	font-size: 200px;
+    color:  white;
+    margin-top: 10vh;
+    margin-left:  5vw;
+}
+
+//Page Specific Css
+@import '_what.scss';
+@import '_how.scss';
+@import '_who.scss';
+
+//media queries calls all on one load, called with includes so they can be typed next to properties they apply too. Hindsight, should be renamed lol.
+@import '_mixins.scss';

@@ -1,0 +1,166 @@
+/* CSS Document */
+.knowledge, .research, .creativebrief, .ux, .development, .maintainence, .design {
+	background-repeat: no-repeat;
+	background-size: 30%;
+}
+.knowledge {
+	background-image:url("https://ballistic.agency/images/0-01.svg");
+	background-position: 15% 5%;
+	padding-top: 17vh;
+}
+#knowledge {
+	margin-left: 15vh;
+}
+.research {
+	background-image:url("https://ballistic.agency/images/1-01.svg");
+	background-position: 75% 5%;
+	padding-top: 10vh;
+}
+
+#research {
+	margin-left: 1vh;
+}
+
+.creativebrief {
+	background-image:url("https://ballistic.agency/images/2-01.svg");
+	background-position: 15% 5%;
+	padding-top: 12vh;
+	
+}
+#creativebrief {
+	margin-left: 30vw;
+}
+
+.ux {
+	background-image:url("https://ballistic.agency/images/3-01.svg");
+	background-position: 75% 5%;
+	padding-top: 10vh;
+}
+#ux {
+	margin-left: 22vw;
+}
+.design {
+	background-image:url("https://ballistic.agency/images/4-01.svg");
+	background-position: 10% 5%;
+	padding-top: 10vh;
+}
+#design {
+	margin-left: 40vw;
+}
+.development {
+	background-image:url("https://ballistic.agency/images/5-01.svg");
+	background-position: 90% 15%;
+	padding-top: 10vh;
+}
+#development {	
+	margin-left: 2vw;
+}
+.maintainence {
+	background-image:url("https://ballistic.agency/images/6-01.svg");
+	background-position: 10% 0%;
+	padding-top: 15vh;
+	margin-bottom: 20vh;
+}
+#maintainence {
+	margin-left: 10vw;
+}
+    
+    //tab-vert how.html 
+	$paragraph_width: 60%;
+	//Left-Aligned Background-Images
+	$left_align: 15vw;
+	// Right-Aligned Background-Images
+	$right_align: 30vw;
+
+@mixin how_paragraphs_tab_vert {
+	$paragraph_width: 90%;
+	$left_align: 5vw;
+	$right_align: 10vw;
+	.knowledge, .research, .creativebrief, .ux, .development, .design, .maintainence {
+		width: $paragraph_width;
+	}
+	.knowledge, .creativebrief, .design, .maintainence {
+		margin-left: $left-align;
+	}
+	.research, .ux, .development {
+		margin-left: $right-align;
+	}
+}
+
+@mixin how_paragraphs_tab_hor { 
+	.knowledge {
+		margin-left: $left_align;
+		width: $paragraph_width;
+		background-position: 5% 20%;
+		background-size: 20%;
+	}
+	.research {
+		width: $paragraph_width;
+		background-size: 20%;
+		background-position: 100% 0%;
+		margin-left: $right_align;
+	}
+	.creativebrief {
+		width: $paragraph_width;
+		background-size: 25%;
+		background-position: 15% 10%;
+		margin-left: $left_align;
+	}
+	#creativebrief {
+		margin-left: 23vw;
+	}
+	.ux {
+		margin-left: $right_align;
+		width: $paragraph_width;
+		margin-left:$right_align;
+		background-size: 23%;
+		background-position: 75% 0%;
+	}
+	.design {
+		width: $paragraph_width;
+		margin-left: $left_align;
+		background-size: 25%;
+	}
+	#design {
+		margin-left: 22.5vw;
+	}
+	.development {
+		width: $paragraph_width;
+		margin-left: $right_align;
+		background-size: 25%;
+		background-position: 85% 15%;
+	}
+	.maintainence {
+		width: $paragraph_width;
+		margin-left: $left_align;
+		background-size: 25%;
+	}
+}
+@mixin how_paragraphs_laptop {
+	$left_align: 20vw;
+	$right_align: 30vw;
+	$paragraph_width: 40%;
+	
+	.knowledge, .research, .creativebrief, .ux, .design, .development, .maintainence {
+		background-position: 0% 65%;
+		background-size: 15%;
+		padding-left: 10%;
+	}
+	.knowledge {
+		margin-left: $left_align;
+	}
+	.maintainence {
+		padding-top: 10vh;
+	}
+	#knowledge, #creativebrief, #ux, #design, #maintainence, #development {
+		margin-left: 1vw;
+	}
+	.research {
+		margin-left: $right_align;
+	}
+	.creativebrief {
+		margin-left: $left_align;
+	}
+	
+}
+

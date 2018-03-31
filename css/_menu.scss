@@ -1,0 +1,233 @@
+/* CSS Document */
+
+@mixin gray_links {
+		&:link {
+			color: $ballistic_gray;
+		}
+		&:visited {
+			color: $ballistic_gray;
+		}
+}
+
+// Menu Hover Effect
+#header {
+	position:fixed;
+	right:15px;
+	display:inline;
+}
+
+#tabs svg {
+	margin: 5px 10px -5px 10px;
+	width: 30px;
+	fill: $ballistic_gray;
+	transition-duration: .3s;
+	&:hover {
+		fill: $ballistic_red;
+		width: 35px;
+	}
+	&:active {
+		fill: $ballistic_cyan;
+	}
+}
+.menu_ul {
+	white-space:nowrap;
+	font-family: $bodoni;
+	font-weight: 300;
+	font-size: 20px;
+	color: $ballistic_gray;
+	margin-top: 20px;
+	text-transform:lowercase;
+	
+}
+#tabs li {
+	display:inline;
+	padding: .3em .6em .3em .6em;
+    //Targets Who - Who would get a border if set to last-child, even though it was the last li once icons were added.
+	&:not(:nth-child(3)) {
+		border-right:  solid 1px $ballistic_gray;
+	}
+	& a{
+	  transition: all 0.5s ease;
+		&:link {
+			color: $ballistic_gray;
+		}
+		&:visited {
+			color: $ballistic_gray;
+		}
+		&:hover {
+			font-style: italic;
+			color: $ballistic_red;
+			font-size: 25px;	
+		}
+		&:active {
+			transition: all 0.25s ease;
+			color: $ballistic_cyan;
+		}
+		
+	}
+}
+// Media Query Call
+@mixin tabs_li_small {
+	#tabs li {
+		display:none;
+	}	
+}
+
+.active_tab {
+	font-size: 25px;
+	color: $ballistic_cyan;
+	font-style:italic;
+	&:visited {
+		color: $ballistic_cyan !important;
+	}
+	&:hover {
+		color: $ballistic_red !important;
+	}
+}
+.navigation {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	// always on top
+	z-index: 99999;
+}
+.navigation li {
+	flex-grow: 1;
+	text-align: center;
+	border: 2px solid $ballistic_red;
+	// extra padding-top is to compensate for ascenders on the words
+	padding: 14px 0px 10px 0px;
+	// 22 to try to reduce bleedover on letter thins
+	font-size: 22px;
+	&:not(:nth-child(3)) {
+		border-right: 1px;
+	}
+}
+
+.navigation li a {
+		&:link {
+			color: $ballistic_gray;
+		}
+		&:visited {
+			color: $ballistic_gray;
+		}
+}
+.active_nav {
+	background-color: $ballistic_red;
+	color: $ballistic_black;
+	font-style:oblique;
+	font-weight: bold;
+	& a {
+		&:link {
+			color: $ballistic_black !important;
+		}
+		&:visited {
+			color: $ballistic_black !important;
+		}
+	}
+}
+
+//  Modified From 
+// Ian Lunn @IanLunn
+// github.com/IanLunn/Hove
+
+.nav_radial {
+   display: inline-block;
+   vertical-align: middle;
+   -webkit-transform: perspective(1px) translateZ(0);
+   transform: perspective(1px) translateZ(0);
+   position: relative;
+   overflow: hidden;
+   background: $ballistic_black;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.nav_radial:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $ballistic_red;
+  border-radius: 50px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.nav_radial:focus, .nav_radial:active {
+  color: $ballistic_gray;
+}
+.nav_radial:focus:before, .nav_radial:active:before {
+ -webkit-transform: scale(2);
+  transform: scale(2);
+}
+// anchorLink css
+.anchor {
+	position: fixed;
+	right: 25px;
+	&:nth-of-type(1) {
+	margin-top: 370px;
+	}
+	&:nth-of-type(2) {
+	margin-top: 400px;
+	}
+	&:nth-of-type(3) {
+	margin-top: 430px;
+	}
+	&:nth-of-type(4) {
+	margin-top: 460px;
+	}
+	&:nth-of-type(5) {
+	margin-top: 490px;
+	}
+	&:nth-of-type(6) {
+	margin-top: 520px;
+	}
+	&:nth-of-type(7) {
+	margin-top: 550px;
+	}
+	&:nth-of-type(8) {
+	margin-top: 580px;
+	}
+}
+#anchorLinks a {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+    border: 2px solid $ballistic_gray;
+	top: -10px;
+	z-index: 0;
+	&:before {
+		position:absolute;
+		content: '';
+		width: 2px;
+		height: 10px;
+		top: 1.1em;
+		left: .45em;
+		background-color: $ballistic_gray;
+		z-index: -500;	
+		}
+	}
+
+#anchorLinks a:last-of-type:before {
+	width: 2em;
+    height: 2px;
+    top: .6em;
+    left: 1.1em;
+}
+.active {
+	background-color:$ballistic_gray;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	}

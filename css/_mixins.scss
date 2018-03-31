@@ -1,0 +1,77 @@
+/* CSS Document */
+
+//Calls all Media Queries into one file
+
+
+// small screen (small)
+@media (max-width: 599px) {
+	@include tabs_li_small;
+	@include footer-mobile;
+}
+
+
+//mobile-msv
+@media (min-width: 500px) {
+	@include intro_section_mobile-msv;
+	@include graphic_design_mobile-msv;
+	@include coding_mobile-msv;
+	@include content_mobile-msv;
+	@include marketing_mobile-msv;
+}
+//non-mobile (global)
+@media (min-width: 599px) {
+	.mobile_only {
+		// important incase applied on things with id
+		display:none !important;
+	}
+	@include logo_global;
+	@include intro_section_global;
+	@include marginTopForHeader-global;
+}
+//tablet verticle (tab-vert)
+@media (min-width: 767px){
+	@include Button_tab-vert;
+	@include intro_section_tab-vert;
+	@include how_paragraphs_tab_vert;
+	@include flyingAirplane_tab-vert;
+	@include whoParagraph_tab-vert;
+}
+//tablet horizontal (tab-hor)
+@media (min-width: 1023px) {
+	@include Button_tab-hor;
+	@include padded_tab-hor;
+	@include center_left-tab-hor;
+	@include what_pargraphs_tab-hor;
+	@include how_paragraphs_tab_hor;
+	@include whoParagraph_tab-hor;
+	@include flyingAirplane_tab-hor;
+}
+//laptop (laptop)
+@media (min-width: 1200px) {
+	@include intro_section_laptop;
+	@include what_parapgraphs_laptop;
+	@include how_paragraphs_laptop;
+}
+//desktop (desktop)
+@media (min-width: 1440px) {
+	@include whoParagraph_desktop;
+}
+
+//desktop-lrg (dsk-lrg)
+@media (min-width:1720px) {
+    @include hero_dsk-lrg;
+	@include what_paragraphs_dsk-lrg;
+	@include logo_dsk-lrg;
+}
+// desktop massive (4k)
+@media (min-width: 2400px) {
+
+}
+@media (max-width: 1040px) {
+	.anchor {display:none;}
+}
+@media (max-width: 400px) {
+	h2 {
+		font-size: 3em;
+	}
+}
